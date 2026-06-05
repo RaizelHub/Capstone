@@ -5,8 +5,7 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransporter({
   service: "gmail",
   auth: {
-    user: "2201102887@student.buksu.edu.ph", // Replace with your new email
-    pass: "qqdywbgpkogircil", // Replace with your new app password
+   
   },
 });
 
