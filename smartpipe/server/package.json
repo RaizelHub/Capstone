@@ -1,0 +1,43 @@
+{
+  "name": "smartpipe-email-server",
+  "version": "1.0.0",
+  "description": "Email server for SmartPipe water management system",
+  "main": "email-server.js",
+  "scripts": {
+    "start": "node database-monitor.js",
+    "dev": "nodemon database-monitor.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "monitor": "node database-monitor.js",
+    "test:leak-alert": "node scripts/send-test-leak-alert.js",
+    "seed:water-quality:clean": "node scripts/seed-water-quality-clean.js",
+    "seed:water-quality:dirty": "node scripts/seed-water-quality-dirty.js",
+    "seed:bulk": "node scripts/seed-bulk-water-quality.js",
+    "seed:manual-activities": "node scripts/seed-bulk-manual-activities.js",
+    "seed:leak-alerts": "node scripts/seed-bulk-leak-alerts.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop smartpipe-monitor",
+    "pm2:restart": "pm2 restart smartpipe-monitor",
+    "pm2:logs": "pm2 logs smartpipe-monitor"
+  },
+  "keywords": [
+    "email",
+    "smartpipe",
+    "water-management",
+    "notifications"
+  ],
+  "author": "SmartPipe Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase-admin": "^13.5.0",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
